@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "bun run --watch ./src/main.ts",
+    "build": "NODE_ENV=production bun run scripts/build.ts",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "devDependencies": {
