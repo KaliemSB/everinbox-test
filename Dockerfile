@@ -2,6 +2,9 @@ FROM oven/bun:alpine AS base
 WORKDIR /usr/src/app
 COPY . .
 
+FROM base AS install-dev
+RUN bun install --frozen-lockfile
+
 FROM base AS install
 RUN bun install --frozen-lockfile --production
 

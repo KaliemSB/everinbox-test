@@ -30,7 +30,6 @@
 		"experimentalDecorators": true,
 
 		"baseUrl": ".",
-
 		"paths": {
 			"@/*": ["./src/*"]
 		}

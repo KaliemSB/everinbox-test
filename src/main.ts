@@ -1,8 +1,9 @@
-import { Logger } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from '@/app.module';
+import { Logger } from "@nestjs/common";
+import { NestFactory } from "@nestjs/core";
+import { AppModule } from "@/app.module";
 
 const app = await NestFactory.create(AppModule);
+app.setGlobalPrefix("/api");
 const logger = new Logger(AppModule.name);
 const PORT = process.env.PORT ?? 3000;
 
