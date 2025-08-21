@@ -9,8 +9,17 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=events
+      - API_KEY=123
     depends_on:
       - database
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
   
   database:
     image: postgres:alpine
@@ -18,3 +27,10 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=events
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

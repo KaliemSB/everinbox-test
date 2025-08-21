@@ -1,26 +1,29 @@
-import { $, build } from 'bun';
+import { $, build } from "bun";
 
 await $`rm -rf dist`;
 
 const optionalRequirePackages = [
-  'class-transformer',
-  'class-validator',
-  '@nestjs/microservices',
-  '@nestjs/websockets',
-  '@fastify/static',
-  'mqtt',
-  'ioredis',
-  'nats',
-  'amqplib',
-  'kafkajs',
-  '@grpc/grpc-js',
-  'amqp-connection-manager',
+  "class-transformer",
+  "class-validator",
+  "@nestjs/microservices",
+  "@nestjs/websockets",
+  "@fastify/static",
+  "mqtt",
+  "ioredis",
+  "nats",
+  "amqplib",
+  "kafkajs",
+  "@grpc/grpc-js",
+  "amqp-connection-manager",
+  "@mikro-orm/core",
+  "@nestjs/sequelize/dist/common/sequelize.utils",
+  "@nestjs/mongoose",
 ];
 
 const result = await build({
-  entrypoints: ['./src/main.ts'],
-  outdir: './dist',
-  target: 'bun',
+  entrypoints: ["./src/main.ts"],
+  outdir: "./dist",
+  target: "bun",
   minify: {
     syntax: true,
     whitespace: true,
@@ -42,4 +45,4 @@ if (!result.success) {
   process.exit(1);
 }
 
-console.log('Built successfully!');
+console.log("Built successfully!");
