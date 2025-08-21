@@ -4,10 +4,21 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun run --watch ./src/main.ts"
+    "dev": "bun run --watch ./src/main.ts",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.33.0",
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.40.0",
+    "@typescript-eslint/parser": "^8.40.0",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
+    "prettier": "^3.6.2"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -15,6 +26,7 @@
   "dependencies": {
     "@nestjs/common": "^11.1.6",
     "@nestjs/core": "^11.1.6",
-    "@nestjs/platform-express": "^11.1.6"
+    "@nestjs/platform-express": "^11.1.6",
+    "reflect-metadata": "^0.2.2"
   }
 }
