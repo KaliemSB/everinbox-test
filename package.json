@@ -10,8 +10,7 @@
     "typeorm": "typeorm-ts-node-esm",
     "migration:generate": "bun run typeorm migration:generate",
     "migration:run": "bun run typeorm migration:run",
-    "migration:revert": "bun run typeorm migration:revert",
-    "seed": "bun run scripts/seed.ts"
+    "migration:revert": "bun run typeorm migration:revert"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
